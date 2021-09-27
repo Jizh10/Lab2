@@ -17,6 +17,7 @@ def switch_fun(pin):
     pwm.ChangeDutyCycle(dc)
   for dc in range(101):
     pwm.ChangeDuty(100-dc)
+  pwm.stop()
 
 for i in range(len(switch)):
   gpio.add_event_detect(switch[i], gpio.RISING, callback=switch_fun, bouncetime=100)
