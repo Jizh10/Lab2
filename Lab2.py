@@ -12,9 +12,9 @@ for i in range(len(switch)):
 
 def switch_fun(pin):
   if pin == switch[0]:
-    pwm_pin = switch[0]
+    pwm_pin = led[0]
   else:
-    pwm_pin = switch[1]
+    pwm_pin = led[1]
   pwm = gpio.PWM(pwm_pin, 1)
   pwm.start(0)
   for dc in range(101):
