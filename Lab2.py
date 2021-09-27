@@ -21,7 +21,7 @@ def switch_fun(pin):
     pwm.ChangeDutyCycle(dc)
     sleep(0.01)
   for dc in range(101):
-    pwm.ChangeDuty(100-dc)
+    pwm.ChangeDutyCycle(100-dc)
     sleep(0.01)
   pwm.stop()
 
