@@ -10,14 +10,13 @@ for i in range(len(led)):
 for i in range(len(switch)):
   gpio.setup(switch[i], gpio.IN, pull_up_down=gpio.PUD_DOWN)
 
-def switch_fun():
-  for i in range(len(switch)):
-    if gpio.input(switch[i]):
-      pwm = gpio.PWM(led, 1)
-      for dc in range(101):
-        pwm.ChangeDutyCycle(dc)
-      for dc in range(101):
-        pwm.ChangeDuty(100-dc)
+def switch_fun(pin):
+  pwm = gpio.PWM(pin, 1)
+  pwm.start(0)
+  for dc in range(101):
+    pwm.ChangeDutyCycle(dc)
+  for dc in range(101):
+    pwm.ChangeDuty(100-dc)
 
 for i in range(len(switch)):
   gpio.add_event_detect(switch[i], gpio.RISING, callback=switch_fun, bouncetime=100)
