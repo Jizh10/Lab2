@@ -15,7 +15,7 @@ def switch_fun(pin):
     pwm_pin = led[0]
   else:
     pwm_pin = led[1]
-  pwm = gpio.PWM(pwm_pin, 1)
+  pwm = gpio.PWM(pwm_pin, 100)
   pwm.start(0)
   for dc in range(101):
     pwm.ChangeDutyCycle(dc)
