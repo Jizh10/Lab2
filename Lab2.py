@@ -24,9 +24,9 @@ for i in range(len(switch)):
 
 try:
   while True:
-    gpio.output(led[3], 1)
+    gpio.output(led[2], 1)
     sleep(1)
-    gpio.output(led[3], 0)
+    gpio.output(led[2], 0)
     sleep(1)
 except KeyboardInterrupt:
   print('\nExiting')
