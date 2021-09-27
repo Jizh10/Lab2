@@ -31,6 +31,6 @@ try:
 except KeyboardInterrupt:
   print('\nExiting')
 except Exception as e:
-  print('\n'+e)
+  print('\ne')
 finally:
   gpio.cleanup()  
