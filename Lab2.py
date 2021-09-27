@@ -11,7 +11,11 @@ for i in range(len(switch)):
   gpio.setup(switch[i], gpio.IN, pull_up_down=gpio.PUD_DOWN)
 
 def switch_fun(pin):
-  pwm = gpio.PWM(pin, 1)
+  if pin == switch[0]:
+    pwm_pin = switch[0]
+  else:
+    pwm_pin = switch[1]
+  pwm = gpio.PWM(pwm_pin, 1)
   pwm.start(0)
   for dc in range(101):
     pwm.ChangeDutyCycle(dc)
