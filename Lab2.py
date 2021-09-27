@@ -30,7 +30,5 @@ try:
     sleep(1)
 except KeyboardInterrupt:
   print('\nExiting')
-except Exception as e:
-  print('\ne')
 finally:
   gpio.cleanup()  
